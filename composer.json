@@ -5,7 +5,7 @@
     "type": "behat-extension",
     "autoload": {
         "psr-4": {
-            "Xedi\\Behat\\Laravel": "src"
+            "Xedi\\Behat\\Laravel\\": "src"
         }
     },
     "require": {

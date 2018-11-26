@@ -3,6 +3,11 @@
     "description": "Laravel Extension for Behat",
     "keywords": ["laravel", "behat", "extension", "bdd"],
     "type": "behat-extension",
+    "autoload": {
+        "psr-4": {
+            "Xedi\\Behat\\Laravel": "src"
+        }
+    },
     "require": {
         "php": ">=5.4",
         "behat/behat": "~3.0",
@@ -20,5 +25,5 @@
             "email": "chris@xedi.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }

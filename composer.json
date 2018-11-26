@@ -1,6 +1,7 @@
 {
     "name": "xedi/behat-laravel",
     "description": "Laravel Extension for Behat",
+    "keywords": ["laravel", "behat", "extension", "bdd"],
     "type": "behat-extension",
     "require": {
         "php": ">=5.4",

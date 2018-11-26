@@ -42,7 +42,7 @@ class LaravelFactory implements DriverFactory
     {
         $this->assertBrowserkitIsAvailable();
 
-        return new Definition('Laravel\Behat\Laravel\Driver\KernelDriver', [
+        return new Definition('Xedi\Behat\Laravel\Driver\KernelDriver', [
             new Reference('laravel.app'),
             '%mink.base_url%'
         ]);

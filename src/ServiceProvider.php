@@ -13,4 +13,11 @@ class ServiceProvider extends BaseProvider
             MakeDotEnvCommand::class,
         ]);
     }
+
+    // public function register()
+    // {
+    //     $this->mergeConfigFrom(
+    //         __DIR__ . '/../config/filesystem.php', 'filesystem'
+    //     );
+    // }
 }

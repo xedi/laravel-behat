@@ -1,0 +1,23 @@
+{
+    "name": "xedi/behat-laravel",
+    "description": "Laravel Extension for Behat",
+    "type": "behat-extension",
+    "require": {
+        "php": ">=5.4",
+        "behat/behat": "~3.0",
+        "behat/mink-browserkit-driver": "~1.2"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.1",
+        "symfony/symfony": "~2.6",
+        "behat/mink-extension": "~2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Smith",
+            "email": "chris@xedi.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}

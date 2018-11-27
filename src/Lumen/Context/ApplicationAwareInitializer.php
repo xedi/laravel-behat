@@ -7,7 +7,7 @@ use Behat\Behat\Context\Context;
 use Illuminate\Support\Facades\Facade;
 use Behat\Behat\EventDispatcher\Event\ScenarioTested;
 use Behat\Behat\Context\Initializer\ContextInitializer;
-use Xedi\Behat\Lumen\ServiceContainer\Booter as LumenBooter;
+use Xedi\Behat\Lumen\ServiceContainer\LumenBooter;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class ApplicationAwareInitializer implements EventSubscriberInterface, ContextInitializer

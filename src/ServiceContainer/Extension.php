@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
 use Behat\Behat\Context\ServiceContainer\ContextExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Xedi\Behat\Laravel\Context\Argument\LaravelArgumentResolver;
+use Xedi\Behat\Context\Argument\ArgumentResolver;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Behat\Testwork\EventDispatcher\ServiceContainer\EventDispatcherExtension;
 
@@ -90,7 +90,7 @@ class Extension implements Extension
      */
     private function loadInitializer(ContainerBuilder $container, $app)
     {
-        $definition = new Definition('Xedi\Behat\Laravel\Context\KernelAwareInitializer', [$app]);
+        $definition = new Definition('Xedi\Behat\Context\KernelAwareInitializer', [$app]);
 
         $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, ['priority' => 0]);
         $definition->addTag(ContextExtension::INITIALIZER_TAG, ['priority' => 0]);

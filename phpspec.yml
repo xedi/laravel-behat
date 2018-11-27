@@ -1,4 +1,4 @@
 suites:
     main_suite:
-        namespace: Xedi\Behat\Laravel
-        psr4_prefix: Xedi\Behat\Laravel
+        namespace: Xedi\Behat
+        psr4_prefix: Xedi\Behat

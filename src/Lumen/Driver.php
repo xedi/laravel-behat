@@ -9,7 +9,7 @@ class Driver extends BrowserKitDriver
 {
     public function __construct(Application $app, $base_url = null)
     {
-        parent::__construct(new Client($app), $base);
+        parent::__construct(new Client($app), $base_url);
     }
 
     public function reboot($app)

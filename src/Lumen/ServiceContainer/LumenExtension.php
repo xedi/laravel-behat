@@ -4,8 +4,8 @@ namespace Xedi\Behat\Lumen\ServiceContainer;
 
 use Xedi\Behat\Context\Argument\ArgumentResolver;
 use Symfony\Component\DependencyInjection\Reference;
-use Xedi\Behat\Lumen\Context\KernelAwareInitializer;
 use Symfony\Component\DependencyInjection\Definition;
+use Xedi\Behat\Lumen\Context\ApplicationAwareInitializer;
 use Behat\Behat\Context\ServiceContainer\ContextExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Xedi\Behat\ServiceContainer\Extension as BaseExtension;
@@ -35,7 +35,6 @@ class LumenExtension extends BaseExtension
         $app = $this->loadLumen($container, $config);
 
         $this->loadInitializer($container, $app);
-        $this->loadArgumentResolver($container, $app);
     }
 
     /**
@@ -62,26 +61,11 @@ class LumenExtension extends BaseExtension
      */
     private function loadInitializer(ContainerBuilder $container, $app)
     {
-        $definition = new Definition(KernelAwareInitializer::class, [ $app ]);
+        $definition = new Definition(ApplicationAwareInitializer::class, [ $app ]);
 
         $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, [ 'priority' => 0 ]);
         $definition->addTag(ContextExtension::INITIALIZER_TAG, [ 'priority' => 0 ]);
 
         $container->setDefinition('lumen.initializer', $definition);
-    }
-
-    /**
-     * Load argument resolver
-     *
-     * @param  ContainerBuilder $container
-     * @param  Application $app
-     */
-    private function loadArgumentResolver(ContainerBuilder $container, $app)
-    {
-        $definition = new Definition(ArgumentResolver::class, [
-            new Reference('lumen.app')
-        ]);
-        $definition->addTag(ContextExtension::ARGUMENT_RESOLVER_TAG, [ 'priority' => 0 ]);
-        $container->setDefinition('lumen.context.argument.service_resolver', $definition);
     }
 }

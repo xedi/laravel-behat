@@ -52,13 +52,14 @@ abstract class Factory implements DriverFactory
      *
      * @throws RuntimeException
      */
-    private function assertBrowserkitIsAvailable()
+    protected function assertBrowserkitIsAvailable()
     {
         if ( ! class_exists('Behat\Mink\Driver\BrowserKitDriver')) {
+            $driver_name = $this->getDriverName();
+
             throw new RuntimeException(
-                'Install MinkBrowserKitDriver in order to use the laravel driver.'
+                "Install MinkBrowserKitDriver in order to use the $driver_name driver."
             );
         }
     }
-
 }

@@ -18,4 +18,17 @@ class LumenFactory extends BaseFactory
     {
         return 'lumen.app';
     }
+
+    public function buildDriver(array $config)
+    {
+        $this->assertBrowserKitIsAvailable();
+
+        return new Definition(
+            LumenDriver::class,
+            [
+                new Reference('lumen.app'),
+                '%mink.base_url%'
+            ]
+        );
+    }
 }

@@ -2,12 +2,12 @@
 
 namespace Xedi\Behat\ServiceContainer;
 
-use Behat\Testwork\ServiceContainer\Extension;
+use Behat\Testwork\ServiceContainer\Extension as ExtensionContract;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-abstract class Extension implements Extension
+abstract class Extension implements ExtensionContract
 {
 
     /**

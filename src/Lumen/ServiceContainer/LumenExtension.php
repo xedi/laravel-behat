@@ -62,7 +62,7 @@ class LumenExtension extends BaseExtension
      */
     private function loadInitializer(ContainerBuilder $container, $app)
     {
-        $definition = new Definition(AwareInitializer::class, [ $app ]);
+        $definition = new Definition(KernelAwareInitializer::class, [ $app ]);
 
         $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, [ 'priority' => 0 ]);
         $definition->addTag(ContextExtension::INITIALIZER_TAG, [ 'priority' => 0 ]);

@@ -8,16 +8,15 @@ use Symfony\Component\DependencyInjection\Definition;
 use Behat\MinkExtension\ServiceContainer\Driver\DriverFactory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-class Factory implements DriverFactory
+abstract class Factory implements DriverFactory
 {
 
     /**
      * {@inheritdoc}
      */
-    public function getDriverName()
-    {
-        return 'laravel';
-    }
+    abstract public function getDriverName();
+
+    abstract public function getDriverReference();
 
     /**
      * {@inheritdoc}
@@ -43,7 +42,7 @@ class Factory implements DriverFactory
         $this->assertBrowserkitIsAvailable();
 
         return new Definition('Xedi\Behat\Driver\KernelDriver', [
-            new Reference('laravel.app'),
+            new Reference($this->getDriverReference()),
             '%mink.base_url%'
         ]);
     }

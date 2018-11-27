@@ -4,7 +4,7 @@ namespace Xedi\Behat\ServiceContainer;
 
 use RuntimeException;
 
-class Booter
+abstract class Booter
 {
 
     /**
@@ -48,10 +48,7 @@ class Booter
      *
      * @return string
      */
-    public function environmentFile()
-    {
-        return $this->environmentFile;
-    }
+    abstract public function environmentFile();
 
 
     /**
@@ -59,22 +56,7 @@ class Booter
      *
      * @return mixed
      */
-    public function boot()
-    {
-        $bootstrapPath = $this->basePath() . '/bootstrap/app.php';
-
-        $this->assertBootstrapFileExists($bootstrapPath);
-
-        $app = require $bootstrapPath;
-
-        $app->loadEnvironmentFrom($this->environmentFile());
-
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
-
-        $app->make('Illuminate\Http\Request')->capture();
-
-        return $app;
-    }
+    abstract public function boot();
 
     /**
      * Ensure that the provided Laravel bootstrap path exists.

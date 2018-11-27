@@ -1,6 +1,6 @@
 <?php
 
-namespace Xedi\Behat\Laravel\ServiceContainer;
+namespace Xedi\Behat\ServiceContainer;
 
 use Behat\Testwork\ServiceContainer\Extension;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
@@ -12,7 +12,7 @@ use Xedi\Behat\Laravel\Context\Argument\LaravelArgumentResolver;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Behat\Testwork\EventDispatcher\ServiceContainer\EventDispatcherExtension;
 
-class LaravelExtension implements Extension
+class Extension implements Extension
 {
 
     /**

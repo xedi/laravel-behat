@@ -1,11 +1,11 @@
 <?php
-namespace Xedi\Behat\Laravel\Context\Argument;
+namespace Xedi\Behat\Context\Argument;
 
 use ReflectionClass;
 use Illuminate\Foundation\Application;
 use Behat\Behat\Context\Argument\ArgumentResolver;
 
-class LaravelArgumentResolver implements ArgumentResolver
+class ArgumentResolver implements ArgumentResolver
 {
     /** @var Application Laravel application instance */
     private $app;

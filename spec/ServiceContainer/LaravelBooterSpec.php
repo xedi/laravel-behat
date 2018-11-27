@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Xedi\Behat\Laravel\ServiceContainer;
+namespace spec\Xedi\Behat\ServiceContainer;
 
 use Prophecy\Argument;
 use PhpSpec\ObjectBehavior;

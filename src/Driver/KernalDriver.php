@@ -1,6 +1,6 @@
 <?php
 
-namespace Xedi\Behat\Laravel\Driver;
+namespace Xedi\Behat\Driver;
 
 use Behat\Mink\Driver\BrowserKitDriver;
 use Symfony\Component\HttpKernel\Client;

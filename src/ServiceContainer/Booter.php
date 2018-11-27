@@ -1,10 +1,10 @@
 <?php
 
-namespace Xedi\Behat\Laravel\ServiceContainer;
+namespace Xedi\Behat\ServiceContainer;
 
 use RuntimeException;
 
-class LaravelBooter
+class Booter
 {
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace Xedi\Behat\Laravel\ServiceContainer;
+namespace Xedi\Behat\ServiceContainer;
 
 use RuntimeException;
 use Symfony\Component\DependencyInjection\Reference;
@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Behat\MinkExtension\ServiceContainer\Driver\DriverFactory;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 
-class LaravelFactory implements DriverFactory
+class Factory implements DriverFactory
 {
 
     /**
@@ -42,7 +42,7 @@ class LaravelFactory implements DriverFactory
     {
         $this->assertBrowserkitIsAvailable();
 
-        return new Definition('Xedi\Behat\Laravel\Driver\KernelDriver', [
+        return new Definition('Xedi\Behat\Driver\KernelDriver', [
             new Reference('laravel.app'),
             '%mink.base_url%'
         ]);

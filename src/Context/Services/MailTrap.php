@@ -1,6 +1,6 @@
 <?php
 
-namespace Xedi\Behat\Laravel\Context\Services;
+namespace Xedi\Behat\Context\Services;
 
 use Config;
 use Exception;

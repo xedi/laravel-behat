@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Xedi\Behat\Laravel\ServiceContainer;
+namespace spec\Xedi\Behat\ServiceContainer;
 
 use Prophecy\Argument;
 use PhpSpec\ObjectBehavior;
@@ -23,7 +23,7 @@ class LaravelFactorySpec extends ObjectBehavior
         $definition = $this->buildDriver([]);
 
         $definition->shouldHaveType('Symfony\Component\DependencyInjection\Definition');
-        $definition->getClass()->shouldBe('Xedi\Behat\Laravel\Driver\KernelDriver');
+        $definition->getClass()->shouldBe('Xedi\Behat\Driver\KernelDriver');
 
         $arguments = $definition->getArguments();
 

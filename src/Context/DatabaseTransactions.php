@@ -1,6 +1,6 @@
 <?php
 
-namespace Xedi\Behat\Laravel\Context;
+namespace Xedi\Behat\Context;
 
 use DB, Cache;
 

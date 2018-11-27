@@ -1,11 +1,11 @@
 <?php
 
-namespace spec\Xedi\Behat\Laravel\Context;
+namespace spec\Xedi\Behat\Context;
 
 use Prophecy\Argument;
 use PhpSpec\ObjectBehavior;
 use Behat\Behat\Context\Context;
-use Xedi\Behat\Laravel\Context\KernelAwareContext;
+use Xedi\Behat\Context\KernelAwareContext;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 class KernelAwareInitializerSpec extends ObjectBehavior

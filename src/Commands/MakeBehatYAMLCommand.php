@@ -1,6 +1,6 @@
 <?php
 
-namespace Xedi\Behat\Laravel\Commands;
+namespace Xedi\Behat\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -13,7 +13,7 @@ class MakeBehatYAMLCommand extends Command
 
     public function handle()
     {
-        $template = File::get(__DIR__ . '/stubs/behat.yml.stub');
+        $template = $this->getStub();
 
         if ($this->confirm('Do you want to use a custom dotenv file?')) {
             $replacement = $this->ask('What is the name of your dotenv file?');
@@ -22,5 +22,10 @@ class MakeBehatYAMLCommand extends Command
         }
 
         File::put(app()->basePath() . '/behat.yml', $template);
+    }
+
+    protected function getStub() : string
+    {
+        return File::get(__DIR__ . '/stubs/behat.yml.stub');
     }
 }

@@ -5,11 +5,10 @@ namespace Xedi\Behat\Context;
 use Behat\Behat\Context\Context;
 use Behat\Behat\EventDispatcher\Event\ScenarioTested;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Xedi\Behat\Laravel\ServiceContainer\LaravelBooter;
 use Behat\Behat\Context\Initializer\ContextInitializer;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class KernelAwareInitializer implements EventSubscriberInterface, ContextInitializer
+abstract class KernelAwareInitializer implements EventSubscriberInterface, ContextInitializer
 {
 
     /**
@@ -17,14 +16,14 @@ class KernelAwareInitializer implements EventSubscriberInterface, ContextInitial
      *
      * @var HttpKernelInterface
      */
-    private $kernel;
+    protected $kernel;
 
     /**
      * The Behat context.
      *
      * @var Context
      */
-    private $context;
+    protected $context;
 
     /**
      * Construct the initializer.
@@ -66,21 +65,19 @@ class KernelAwareInitializer implements EventSubscriberInterface, ContextInitial
         }
     }
 
+    protected function getKernal()
+    {
+        return $this->kernal;
+    }
+
+    protected function getContext()
+    {
+        return $this->context;
+    }
+
     /**
      * After each scenario, reboot the kernel.
      */
-    public function rebootKernel()
-    {
-        if ($this->context instanceof KernelAwareContext)
-        {
-            $this->kernel->flush();
-
-            $laravel = new LaravelBooter($this->kernel->basePath(), $this->kernel->environmentFile());
-
-            $this->context->getSession('laravel')->getDriver()->reboot($this->kernel = $laravel->boot());
-
-            $this->setAppOnContext();
-        }
-    }
+    abstract public function rebootKernel();
 
 }

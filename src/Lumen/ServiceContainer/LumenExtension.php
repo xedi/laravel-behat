@@ -1,30 +1,30 @@
 <?php
 
-namespace Xedi\Behat\Laravel\ServiceContainer;
+namespace Xedi\Behat\Lumen\ServiceContainer;
 
 use Xedi\Behat\Context\Argument\ArgumentResolver;
 use Symfony\Component\DependencyInjection\Reference;
+use Xedi\Behat\Lumen\Context\KernelAwareInitializer;
 use Symfony\Component\DependencyInjection\Definition;
-use Xedi\Behat\Laravel\Context\KernelAwareInitializer;
 use Behat\Behat\Context\ServiceContainer\ContextExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Xedi\Behat\ServiceContainer\Extension as BaseExtension;
 use Behat\Testwork\EventDispatcher\ServiceContainer\EventDispatcherExtension;
 
-class LaravelExtension extends BaseExtension
+class LumenExtension extends BaseExtension
 {
     /**
      * {@inheritdoc}
      */
     public function getConfigKey()
     {
-        return 'laravel';
+        return 'lumen';
     }
 
 
     public function getFactory()
     {
-        return new LaravelFactory();
+        return new LumenFactory();
     }
 
     /**
@@ -32,24 +32,24 @@ class LaravelExtension extends BaseExtension
      */
     public function load(ContainerBuilder $container, array $config)
     {
-        $app = $this->loadLaravel($container, $config);
+        $app = $this->loadLumen($container, $config);
 
         $this->loadInitializer($container, $app);
-        $this->loadLaravelArgumentResolver($container, $app);
+        $this->loadArgumentResolver($container, $app);
     }
 
     /**
-     * Boot up Laravel.
+     * Boot up Lumen.
      *
      * @param ContainerBuilder $container
      * @param array            $config
      * @return mixed
      */
-    private function loadLaravel(ContainerBuilder $container, array $config)
+    private function loadLumen(ContainerBuilder $container, array $config)
     {
-        $laravel = new LaravelBooter($container->getParameter('paths.base'), $config['env_path']);
+        $lumen = new LumenBooter($container->getParameter('paths.base'), $config['env_path']);
 
-        $container->set('laravel.app', $app = $laravel->boot());
+        $container->set('lumen.app', $app = $lumen->boot());
 
         return $app;
     }
@@ -62,12 +62,12 @@ class LaravelExtension extends BaseExtension
      */
     private function loadInitializer(ContainerBuilder $container, $app)
     {
-        $definition = new Definition(KernelAwareInitializer::class, [$app]);
+        $definition = new Definition(AwareInitializer::class, [ $app ]);
 
-        $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, ['priority' => 0]);
-        $definition->addTag(ContextExtension::INITIALIZER_TAG, ['priority' => 0]);
+        $definition->addTag(EventDispatcherExtension::SUBSCRIBER_TAG, [ 'priority' => 0 ]);
+        $definition->addTag(ContextExtension::INITIALIZER_TAG, [ 'priority' => 0 ]);
 
-        $container->setDefinition('laravel.initializer', $definition);
+        $container->setDefinition('lumen.initializer', $definition);
     }
 
     /**
@@ -76,12 +76,12 @@ class LaravelExtension extends BaseExtension
      * @param  ContainerBuilder $container
      * @param  Application $app
      */
-    private function loadLaravelArgumentResolver(ContainerBuilder $container, $app)
+    private function loadArgumentResolver(ContainerBuilder $container, $app)
     {
         $definition = new Definition(ArgumentResolver::class, [
-            new Reference('laravel.app')
+            new Reference('lumen.app')
         ]);
-        $definition->addTag(ContextExtension::ARGUMENT_RESOLVER_TAG, ['priority' => 0]);
-        $container->setDefinition('laravel.context.argument.service_resolver', $definition);
+        $definition->addTag(ContextExtension::ARGUMENT_RESOLVER_TAG, [ 'priority' => 0 ]);
+        $container->setDefinition('lumen.context.argument.service_resolver', $definition);
     }
 }

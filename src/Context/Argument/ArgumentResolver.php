@@ -2,8 +2,8 @@
 namespace Xedi\Behat\Context\Argument;
 
 use ReflectionClass;
-use Illuminate\Foundation\Application;
 use Behat\Behat\Context\Argument\ArgumentResolver;
+use Illuminate\Container\Container as Application;
 
 class ArgumentResolver implements ArgumentResolver
 {

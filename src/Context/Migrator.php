@@ -2,7 +2,7 @@
 
 namespace Xedi\Behat\Context;
 
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
 
 trait Migrator
 {

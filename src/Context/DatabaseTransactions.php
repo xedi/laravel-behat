@@ -2,7 +2,8 @@
 
 namespace Xedi\Behat\Context;
 
-use DB, Cache;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Cache;
 
 trait DatabaseTransactions
 {

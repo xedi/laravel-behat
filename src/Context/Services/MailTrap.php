@@ -2,7 +2,7 @@
 
 namespace Xedi\Behat\Context\Services;
 
-use Config;
+use Illuminate\Support\Facades\Config;
 use Exception;
 use GuzzleHttp\Client;
 

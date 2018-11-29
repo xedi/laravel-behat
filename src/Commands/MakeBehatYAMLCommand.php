@@ -26,6 +26,12 @@ class MakeBehatYAMLCommand extends Command
 
     protected function getStub() : string
     {
-        return File::get(__DIR__ . '/stubs/behat.yml.stub');
+        if (preg_match('/Lumen/', get_class(app()))) {
+            $stub = '/stubs/lumen.behat.yml.stub';
+        } else {
+            $stub = '/stubs/laravel.behat.yml.stub';
+        }
+
+        return File::get(__DIR__ . $stub);
     }
 }

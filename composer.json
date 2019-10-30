@@ -12,7 +12,9 @@
         "php": ">=5.4",
         "behat/behat": "~3.0",
         "behat/mink": "~1.7",
-        "behat/mink-browserkit-driver": "~1.2"
+        "behat/mink-browserkit-driver": "~1.2",
+        "illuminate/support": ">=5",
+        "illuminate/console": ">=5"
     },
     "require-dev": {
         "symfony/symfony": "~2.6",
@@ -32,5 +34,8 @@
             ]
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "suggest": {
+        "behat/mink-extension": "Provides integration between mink and behat"
+    }
 }

@@ -1,5 +1,5 @@
 {
-    "name": "xedi/behat-laravel",
+    "name": "xedi/laravel-behat",
     "description": "Laravel Extension for Behat",
     "keywords": ["laravel", "behat", "extension", "bdd"],
     "type": "behat-extension",

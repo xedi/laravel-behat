@@ -1,4 +1,4 @@
-# behat-laravel
+# laravel-behat
 Behat Extension compatible with both Laravel and Lumen
 
 ---
@@ -10,7 +10,7 @@ Behat Extension compatible with both Laravel and Lumen
 Pull in the extension using composer
 
 ```bash
-composer require xedi/behat-laravel --dev
+composer require xedi/laravel-behat --dev
 ```
 
 You will also probably need `behat/mink-extension`:

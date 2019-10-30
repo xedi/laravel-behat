@@ -13,12 +13,6 @@ Pull in the extension using composer
 composer require xedi/laravel-behat --dev
 ```
 
-You will also probably need `behat/mink-extension`:
-
-```bash
-composer require behat/mink-extension --dev
-```
-
 :information_source: **If you are using Lumen you will need to register the ServiceProvider yourself for access to the Artisan commands.**
 
 ```php

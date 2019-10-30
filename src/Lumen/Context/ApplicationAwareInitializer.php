@@ -1,18 +1,22 @@
 <?php
-
 namespace Xedi\Behat\Lumen\Context;
 
-use Laravel\Lumen\Application;
 use Behat\Behat\Context\Context;
-use Illuminate\Support\Facades\Facade;
-use Behat\Behat\EventDispatcher\Event\ScenarioTested;
 use Behat\Behat\Context\Initializer\ContextInitializer;
-use Xedi\Behat\Lumen\ServiceContainer\LumenBooter;
+use Behat\Behat\EventDispatcher\Event\ScenarioTested;
+use Illuminate\Support\Facades\Facade;
+use Laravel\Lumen\Application;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Xedi\Behat\Lumen\ServiceContainer\LumenBooter;
 
+/**
+ * ApplicationAware Initializer
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 class ApplicationAwareInitializer implements EventSubscriberInterface, ContextInitializer
 {
-
     /**
      * The app kernel.
      *
@@ -30,7 +34,7 @@ class ApplicationAwareInitializer implements EventSubscriberInterface, ContextIn
     /**
      * Construct the initializer.
      *
-     * @param Application $app
+     * @param Application $app Application container
      */
     public function __construct(Application $app)
     {
@@ -38,7 +42,22 @@ class ApplicationAwareInitializer implements EventSubscriberInterface, ContextIn
     }
 
     /**
-     * {@inheritdoc}
+     * Returns an array of event names this subscriber wants to listen to.
+     *
+     * The array keys are event names and the value can be:
+     *
+     *  * The method name to call (priority defaults to 0)
+     *  * An array composed of the method name to call and the priority
+     *  * An array of arrays composed of the method names to call and respective
+     *    priorities, or 0 if unset
+     *
+     * For instance:
+     *
+     *  * array('eventName' => 'methodName')
+     *  * array('eventName' => array('methodName', $priority))
+     *  * array('eventName' => array(array('methodName1', $priority), array('methodName2')))
+     *
+     * @return array The event names to listen to
      */
     public static function getSubscribedEvents()
     {
@@ -48,7 +67,11 @@ class ApplicationAwareInitializer implements EventSubscriberInterface, ContextIn
     }
 
     /**
-     * {@inheritdoc}
+     * Initializes provided context.
+     *
+     * @param Context $context Behat context
+     *
+     * @return void
      */
     public function initializeContext(Context $context)
     {
@@ -58,6 +81,10 @@ class ApplicationAwareInitializer implements EventSubscriberInterface, ContextIn
 
     /**
      * Set the app kernel to the feature context.
+     *
+     * @internal
+     *
+     * @return void
      */
     private function setAppOnContext()
     {
@@ -68,6 +95,8 @@ class ApplicationAwareInitializer implements EventSubscriberInterface, ContextIn
 
     /**
      * After each scenario, reboot the kernel.
+     *
+     * @return void
      */
     public function reboot()
     {

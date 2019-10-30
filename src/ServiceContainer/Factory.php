@@ -1,25 +1,40 @@
 <?php
-
 namespace Xedi\Behat\ServiceContainer;
 
-use RuntimeException;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\DependencyInjection\Definition;
 use Behat\MinkExtension\ServiceContainer\Driver\DriverFactory;
+use RuntimeException;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
 
+/**
+ * Abstract Factory
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 abstract class Factory implements DriverFactory
 {
-
     /**
-     * {@inheritdoc}
+     * Gets the name of the driver being configured.
+     *
+     * This will be the key of the configuration for the driver.
+     *
+     * @return string
      */
     abstract public function getDriverName();
 
+    /**
+     * Gets the name of the container being configured.
+     *
+     * @return string
+     */
     abstract public function getDriverReference();
 
     /**
-     * {@inheritdoc}
+     * Defines whether a session using this driver is eligible as default javascript session
+     *
+     * @return boolean
      */
     public function supportsJavascript()
     {
@@ -27,15 +42,23 @@ abstract class Factory implements DriverFactory
     }
 
     /**
-     * {@inheritdoc}
+     * Setups configuration for the driver factory.
+     *
+     * @param ArrayNodeDefinition $builder Resolved ArrayNodeDefinition builder
+     *
+     * @return void
      */
     public function configure(ArrayNodeDefinition $builder)
     {
-        //
+        // noop
     }
 
     /**
-     * {@inheritdoc}
+     * Builds the service definition for the driver.
+     *
+     * @param array $config Driver configuration
+     *
+     * @return Definition
      */
     public function buildDriver(array $config)
     {
@@ -51,10 +74,12 @@ abstract class Factory implements DriverFactory
      * Ensure that BrowserKit is available.
      *
      * @throws RuntimeException
+     *
+     * @return void
      */
     protected function assertBrowserkitIsAvailable()
     {
-        if ( ! class_exists('Behat\Mink\Driver\BrowserKitDriver')) {
+        if (! class_exists('Behat\Mink\Driver\BrowserKitDriver')) {
             $driver_name = $this->getDriverName();
 
             throw new RuntimeException(

@@ -1,22 +1,30 @@
 <?php
-
 namespace Xedi\Behat\Lumen\ServiceContainer;
 
 use Xedi\Behat\ServiceContainer\Booter as BaseBooter;
 
+/**
+ * Boots a Lumen application
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 class LumenBooter extends BaseBooter
 {
     /**
-     * {@inheritdoc}
+     * Get the application's environment file.
+     *
+     * @return string
      */
     public function environmentFile()
     {
         return $this->environmentFile;
     }
 
-
     /**
-     * {@inheritdoc}
+     * Boot the app.
+     *
+     * @return mixed
      */
     public function boot()
     {

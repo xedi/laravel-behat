@@ -1,21 +1,26 @@
 <?php
-
 namespace Xedi\Behat\Lumen;
 
 use Illuminate\Container\Container;
-use Symfony\Component\BrowserKit\History;
 use Laravel\Lumen\Concerns\RoutesRequests;
+use Laravel\Lumen\Testing\Concerns\MakesHttpRequests;
+use Symfony\Component\BrowserKit\Client as BaseClient;
+use Symfony\Component\BrowserKit\Cookie as DomCookie;
 use Symfony\Component\BrowserKit\CookieJar;
+use Symfony\Component\BrowserKit\History;
+use Symfony\Component\BrowserKit\Request as DomRequest;
+use Symfony\Component\BrowserKit\Response as DomResponse;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Laravel\Lumen\Testing\Concerns\MakesHttpRequests;
-use Symfony\Component\BrowserKit\Cookie as DomCookie;
-use Symfony\Component\BrowserKit\Client as BaseClient;
-use Symfony\Component\BrowserKit\Request as DomRequest;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Symfony\Component\BrowserKit\Response as DomResponse;
 
+/**
+ * Client simulates a browser.
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 class Client extends BaseClient
 {
     use MakesHttpRequests;
@@ -27,39 +32,33 @@ class Client extends BaseClient
      */
     protected $app;
 
-    public function __construct(Container $app, array $server = array(), History $history = null, CookieJar $cookieJar = null)
-    {
+    /**
+     * Initialize a Client
+     *
+     * @param Container $app       Resolved app container
+     * @param array     $server    The server parameters (equivalent of $_SERVER)
+     * @param History   $history   A History instance to store the browser history
+     * @param CookieJar $cookieJar A CookieJar instance to store the cookies
+     */
+    public function __construct(
+        Container $app,
+        array $server = array(),
+        History $history = null,
+        CookieJar $cookieJar = null
+    ) {
         $this->app = $app;
 
         parent::__construct($server, $history, $cookieJar);
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @return Request|null A Request instance
-     */
-    public function getRequest()
-    {
-        return parent::getRequest();
-    }
-
-    /**
-     * {@inheritdoc}
-     *
-     * @return Response|null A Response instance
-     */
-    public function getResponse()
-    {
-        return parent::getResponse();
-    }
-
-    /**
      * Makes a request.
      *
      * @param Request $request A Request instance
-     * @return Response A Response instance
+     *
      * @throws \Exception
+     *
+     * @return Response A Response instance
      */
     protected function doRequest($request)
     {
@@ -81,11 +80,20 @@ class Client extends BaseClient
      * Converts the BrowserKit request to a HttpKernel request.
      *
      * @param DomRequest $request A DomRequest instance
+     *
      * @return Request A Request instance
      */
     protected function filterRequest(DomRequest $request)
     {
-        $httpRequest = Request::create($request->getUri(), $request->getMethod(), $request->getParameters(), $request->getCookies(), $request->getFiles(), $request->getServer(), $request->getContent());
+        $httpRequest = Request::create(
+            $request->getUri(),
+            $request->getMethod(),
+            $request->getParameters(),
+            $request->getCookies(),
+            $request->getFiles(),
+            $request->getServer(),
+            $request->getContent()
+        );
 
         foreach ($this->filterFiles($httpRequest->files->all()) as $key => $value) {
             $httpRequest->files->set($key, $value);
@@ -98,6 +106,7 @@ class Client extends BaseClient
      * Converts the HttpKernel response to a BrowserKit response.
      *
      * @param Response $response A Response instance
+     *
      * @return DomResponse A DomResponse instance
      */
     protected function filterResponse($response)
@@ -106,8 +115,16 @@ class Client extends BaseClient
         if ($response->headers->getCookies()) {
             $cookies = array();
             foreach ($response->headers->getCookies() as $cookie) {
-                /** @var Cookie $cookie */
-                $cookies[] = new DomCookie($cookie->getName(), $cookie->getValue(), $cookie->getExpiresTime(), $cookie->getPath(), $cookie->getDomain(), $cookie->isSecure(), $cookie->isHttpOnly());
+                /* @var Cookie $cookie */
+                $cookies[] = new DomCookie(
+                    $cookie->getName(),
+                    $cookie->getValue(),
+                    $cookie->getExpiresTime(),
+                    $cookie->getPath(),
+                    $cookie->getDomain(),
+                    $cookie->isSecure(),
+                    $cookie->isHttpOnly()
+                );
             }
             $headers['Set-Cookie'] = $cookies;
         }
@@ -129,9 +146,8 @@ class Client extends BaseClient
      * If the size of a file is greater than the allowed size (from php.ini) then
      * an invalid UploadedFile is returned with an error set to UPLOAD_ERR_INI_SIZE.
      *
-     * @see UploadedFile
-     *
      * @param array $files An array of files
+     *
      * @return array An array with all uploaded files marked as already moved
      */
     protected function filterFiles(array $files)

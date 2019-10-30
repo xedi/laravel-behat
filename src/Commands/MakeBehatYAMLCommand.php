@@ -1,16 +1,38 @@
 <?php
-
 namespace Xedi\Behat\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
+/**
+ * Make BehatYAML Command
+ *
+ * @package Xedit\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ *
+ * @deprecated 1.0.2 Migrating to vendor publishing
+ */
 class MakeBehatYAMLCommand extends Command
 {
+    /**
+     * Command signature
+     *
+     * @var string
+     */
     protected $signature = 'make:behat-yaml';
 
+    /**
+     * Command Description
+     *
+     * @var string
+     */
     protected $description = 'Make the Behat YAML file';
 
+    /**
+     * Perform the commands function
+     *
+     * @return void
+     */
     public function handle()
     {
         $template = $this->getStub();
@@ -24,6 +46,11 @@ class MakeBehatYAMLCommand extends Command
         File::put(app()->basePath() . '/behat.yml', $template);
     }
 
+    /**
+     * Fetch the correct stub
+     *
+     * @return string
+     */
     protected function getStub() : string
     {
         if (preg_match('/Lumen/', get_class(app()))) {

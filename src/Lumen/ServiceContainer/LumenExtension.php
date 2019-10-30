@@ -2,33 +2,49 @@
 
 namespace Xedi\Behat\Lumen\ServiceContainer;
 
-use Xedi\Behat\Context\Argument\ArgumentResolver;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\DependencyInjection\Definition;
-use Xedi\Behat\Lumen\Context\ApplicationAwareInitializer;
 use Behat\Behat\Context\ServiceContainer\ContextExtension;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Xedi\Behat\ServiceContainer\Extension as BaseExtension;
 use Behat\Testwork\EventDispatcher\ServiceContainer\EventDispatcherExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
+use Xedi\Behat\Lumen\Context\ApplicationAwareInitializer;
+use Xedi\Behat\ServiceContainer\Extension as BaseExtension;
 
+/**
+ * Provides framework functionalities to Behat
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 class LumenExtension extends BaseExtension
 {
     /**
-     * {@inheritdoc}
+     * Returns the extension config key.
+     *
+     * @return string
      */
     public function getConfigKey()
     {
         return 'lumen';
     }
 
-
+    /**
+     * Returns the factory
+     *
+     * @return LaravelFactory
+     */
     public function getFactory()
     {
         return new LumenFactory();
     }
 
     /**
-     * {@inheritdoc}
+     * Loads extension services into temporary container.
+     *
+     * @param ContainerBuilder $container App Container
+     * @param array            $config    App Configuration
+     *
+     * @return void
      */
     public function load(ContainerBuilder $container, array $config)
     {
@@ -40,8 +56,11 @@ class LumenExtension extends BaseExtension
     /**
      * Boot up Lumen.
      *
-     * @param ContainerBuilder $container
-     * @param array            $config
+     * @param ContainerBuilder $container Application Container
+     * @param array            $config    Application configuration
+     *
+     * @internal
+     *
      * @return mixed
      */
     private function loadLumen(ContainerBuilder $container, array $config)
@@ -56,8 +75,12 @@ class LumenExtension extends BaseExtension
     /**
      * Load the initializer.
      *
-     * @param ContainerBuilder    $container
-     * @param HttpKernelInterface $app
+     * @param ContainerBuilder    $container Resolved ContainerBuilder instance
+     * @param HttpKernelInterface $app       App Instance
+     *
+     * @internal
+     *
+     * @return void
      */
     private function loadInitializer(ContainerBuilder $container, $app)
     {

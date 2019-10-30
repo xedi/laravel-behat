@@ -1,34 +1,50 @@
 <?php
-
 namespace Xedi\Behat\Laravel\ServiceContainer;
 
-use Xedi\Behat\Context\Argument\ArgumentResolver;
-use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\DependencyInjection\Definition;
-use Xedi\Behat\Laravel\Context\KernelAwareInitializer;
 use Behat\Behat\Context\ServiceContainer\ContextExtension;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Xedi\Behat\ServiceContainer\Extension as BaseExtension;
 use Behat\Testwork\EventDispatcher\ServiceContainer\EventDispatcherExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
+use Xedi\Behat\Context\Argument\ArgumentResolver;
+use Xedi\Behat\Laravel\Context\KernelAwareInitializer;
+use Xedi\Behat\ServiceContainer\Extension as BaseExtension;
 
+/**
+ * Provides framework functionalities to Behat
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 class LaravelExtension extends BaseExtension
 {
     /**
-     * {@inheritdoc}
+     * Returns the extension config key.
+     *
+     * @return string
      */
     public function getConfigKey()
     {
         return 'laravel';
     }
 
-
+    /**
+     * Returns the factory
+     *
+     * @return LaravelFactory
+     */
     public function getFactory()
     {
         return new LaravelFactory();
     }
 
     /**
-     * {@inheritdoc}
+     * Loads extension services into temporary container.
+     *
+     * @param ContainerBuilder $container App Container
+     * @param array            $config    App Configuration
+     *
+     * @return void
      */
     public function load(ContainerBuilder $container, array $config)
     {
@@ -41,8 +57,11 @@ class LaravelExtension extends BaseExtension
     /**
      * Boot up Laravel.
      *
-     * @param ContainerBuilder $container
-     * @param array            $config
+     * @param ContainerBuilder $container Resolved ContainerBuilder instance
+     * @param array            $config    App Configuration
+     *
+     * @internal
+     *
      * @return mixed
      */
     private function loadLaravel(ContainerBuilder $container, array $config)
@@ -57,8 +76,12 @@ class LaravelExtension extends BaseExtension
     /**
      * Load the initializer.
      *
-     * @param ContainerBuilder    $container
-     * @param HttpKernelInterface $app
+     * @param ContainerBuilder    $container Resolved ContainerBuilder instance
+     * @param HttpKernelInterface $app       App Instance
+     *
+     * @internal
+     *
+     * @return void
      */
     private function loadInitializer(ContainerBuilder $container, $app)
     {
@@ -73,8 +96,12 @@ class LaravelExtension extends BaseExtension
     /**
      * Load argument resolver
      *
-     * @param  ContainerBuilder $container
-     * @param  Application $app
+     * @param ContainerBuilder $container Resolved ContainerBuilder instance
+     * @param Application      $app       App Instance
+     *
+     * @internal
+     *
+     * @return void
      */
     private function loadLaravelArgumentResolver(ContainerBuilder $container, $app)
     {

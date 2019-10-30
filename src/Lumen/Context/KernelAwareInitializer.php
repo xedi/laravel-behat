@@ -1,15 +1,22 @@
 <?php
-
 namespace Xedi\Behat\Lumen\Context;
 
 use Xedi\Behat\Context\KernalAwareContext;
-use Xedi\Behat\Lumen\ServiceContainer\LumenBooter;
 use Xedi\Behat\Context\KernelAwareInitializer as BaseInitializer;
+use Xedi\Behat\Lumen\ServiceContainer\LumenBooter;
 
+/**
+ * Initialize the App Container
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 class KernelAwareInitializer extends BaseInitializer
 {
     /**
      * After each scenario, reboot the kernel.
+     *
+     * @return void
      */
     public function rebootKernel()
     {

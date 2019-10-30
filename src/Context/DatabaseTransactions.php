@@ -1,13 +1,17 @@
 <?php
-
 namespace Xedi\Behat\Context;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 
+/**
+ * DatabaseTransactions Concern
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 trait DatabaseTransactions
 {
-
     /**
      * The database connections that should have transactions.
      *
@@ -23,6 +27,8 @@ trait DatabaseTransactions
      * Begin a database transaction.
      *
      * @BeforeScenario
+     *
+     * @return void
      */
     public function beginTransaction()
     {
@@ -32,10 +38,11 @@ trait DatabaseTransactions
     }
 
     /**
-     *
      * Roll it back after the scenario.
      *
      * @AfterScenario
+     *
+     * @return void
      */
     public function rollback()
     {
@@ -44,5 +51,4 @@ trait DatabaseTransactions
         }
         Cache::flush();
     }
-
 }

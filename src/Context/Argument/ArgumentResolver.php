@@ -1,17 +1,29 @@
 <?php
 namespace Xedi\Behat\Context\Argument;
 
-use ReflectionClass;
 use Behat\Behat\Context\Argument\ArgumentResolver;
 use Illuminate\Container\Container as Application;
+use ReflectionClass;
 
+/**
+ * Resolves arguments of context constructors
+ *
+ * @package Xedi\Behat
+ * @author  Chris Smith <chris@xedi.com>
+ */
 class ArgumentResolver implements ArgumentResolver
 {
-    /** @var Application Laravel application instance */
+    /**
+     * Application Container
+     *
+     * @var Application
+     */
     private $app;
 
     /**
-     * @param Application $app
+     * Initialize the ArgumentResolver
+     *
+     * @param Application $app Application container
      */
     public function __construct(Application $app)
     {
@@ -21,10 +33,10 @@ class ArgumentResolver implements ArgumentResolver
     /**
      * Resolves context constructor arguments.
      *
-     * @param ReflectionClass $classReflection
-     * @param mixed[]         $arguments
+     * @param ReflectionClass $classReflection Reflection of the class
+     * @param array           $arguments       Provided arguments
      *
-     * @return mixed[]
+     * @return array
      */
     public function resolveArguments(ReflectionClass $classReflection, array $arguments)
     {
@@ -40,8 +52,11 @@ class ArgumentResolver implements ArgumentResolver
     /**
      * Resolve argument
      *
-     * @param  string $arg
-     * @return object
+     * @param string $arg Argument to resolve
+     *
+     * @internal
+     *
+     * @return object|string
      */
     private function resolveArgument($arg)
     {

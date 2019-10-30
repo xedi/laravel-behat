@@ -1,8 +1,9 @@
 # Export Ignore - remove from vendor package
 
-.github/ export-ignore
-.gitignore export-ignore
+.dependabot/ export-ignore
 .editorconfig export-ignore
 .env.example export-ignore
+.github/ export-ignore
+.gitignore export-ignore
 Makefile export-ignore
 phpcs.xml export-ignore

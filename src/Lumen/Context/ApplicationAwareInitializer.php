@@ -102,8 +102,9 @@ class ApplicationAwareInitializer implements EventSubscriberInterface, ContextIn
     {
         Facade::clearResolvedInstances();
 
-        $lumen = new LumenBooter($this->app->basePath());
-        $this->context->getSession('lumen')->getDriver()->reboot($this->app = $lumen->boot());
+        $this->app = (new LumenBooter($this->app->basePath()))
+            ->boot();
+
         $this->setAppOnContext();
     }
 }

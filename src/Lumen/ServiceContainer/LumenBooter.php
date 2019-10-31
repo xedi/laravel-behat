@@ -1,6 +1,7 @@
 <?php
 namespace Xedi\Behat\Lumen\ServiceContainer;
 
+use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 use Xedi\Behat\ServiceContainer\Booter as BaseBooter;
 
 /**
@@ -30,6 +31,12 @@ class LumenBooter extends BaseBooter
     {
         $bootstrapPath = $this->basePath() . '/bootstrap/app.php';
         $this->assertBootstrapFileExists($bootstrapPath);
+
+        (new LoadEnvironmentVariables(
+            $this->basePath(),
+            $this->environmentFile()
+        ))
+            ->bootstrap();
 
         return tap(require $bootstrapPath, function ($app) {
             $app->boot();

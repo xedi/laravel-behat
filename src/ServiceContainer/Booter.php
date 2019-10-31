@@ -23,7 +23,7 @@ abstract class Booter
      *
      * @var string
      */
-    private $environmentFile;
+    protected $environmentFile;
 
     /**
      * Get the application's environment file.

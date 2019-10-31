@@ -31,8 +31,8 @@ class LumenBooter extends BaseBooter
         $bootstrapPath = $this->basePath() . '/bootstrap/app.php';
         $this->assertBootstrapFileExists($bootstrapPath);
 
-        $app = require $bootstrapPath;
-
-        return $app;
+        return tap(require $bootstrapPath, function ($app) {
+            $app->boot();
+        });
     }
 }

@@ -389,6 +389,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
+            "abandoned": "psr/container",
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
@@ -460,16 +461,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.5.1",
+            "version": "v6.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "e87ca7da2c1849a33b86b1e6ec1e64fe6faa937d"
+                "reference": "f494593315fdbbc052d532a4d662fd09dc699f33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/e87ca7da2c1849a33b86b1e6ec1e64fe6faa937d",
-                "reference": "e87ca7da2c1849a33b86b1e6ec1e64fe6faa937d",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/f494593315fdbbc052d532a4d662fd09dc699f33",
+                "reference": "f494593315fdbbc052d532a4d662fd09dc699f33",
                 "shasum": ""
             },
             "require": {
@@ -507,7 +508,7 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2019-10-24T11:49:56+00:00"
+            "time": "2019-11-18T16:17:36+00:00"
         },
         {
             "name": "illuminate/container",
@@ -555,7 +556,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v6.5.1",
+            "version": "v6.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -1050,16 +1051,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "d2e39dbddae68560fa6be0c576da6ad4e945b90d"
+                "reference": "831424efae0a1fe6642784bd52aae14ece6538e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/d2e39dbddae68560fa6be0c576da6ad4e945b90d",
-                "reference": "d2e39dbddae68560fa6be0c576da6ad4e945b90d",
+                "url": "https://api.github.com/repos/symfony/console/zipball/831424efae0a1fe6642784bd52aae14ece6538e6",
+                "reference": "831424efae0a1fe6642784bd52aae14ece6538e6",
                 "shasum": ""
             },
             "require": {
@@ -1121,7 +1122,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-05T15:00:49+00:00"
+            "time": "2019-11-13T07:29:07+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -2044,7 +2045,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",

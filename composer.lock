@@ -461,16 +461,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.6.1",
+            "version": "v6.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "8e5977541aeb98f8d04b62ecea7f8246f399d97b"
+                "reference": "900cfd158ae6345349017cf080699afed85bdd74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/8e5977541aeb98f8d04b62ecea7f8246f399d97b",
-                "reference": "8e5977541aeb98f8d04b62ecea7f8246f399d97b",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/900cfd158ae6345349017cf080699afed85bdd74",
+                "reference": "900cfd158ae6345349017cf080699afed85bdd74",
                 "shasum": ""
             },
             "require": {
@@ -508,7 +508,7 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2019-11-29T13:41:50+00:00"
+            "time": "2019-12-05T13:44:12+00:00"
         },
         {
             "name": "illuminate/container",

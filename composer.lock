@@ -461,16 +461,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.8.0",
+            "version": "v6.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "8ab434a4df20d0b6262e5347f28177b615c1d56c"
+                "reference": "35feac8cdc402b66bda205f86e4c72748821423f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/8ab434a4df20d0b6262e5347f28177b615c1d56c",
-                "reference": "8ab434a4df20d0b6262e5347f28177b615c1d56c",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/35feac8cdc402b66bda205f86e4c72748821423f",
+                "reference": "35feac8cdc402b66bda205f86e4c72748821423f",
                 "shasum": ""
             },
             "require": {
@@ -488,7 +488,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -508,7 +508,7 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2019-12-16T09:20:27+00:00"
+            "time": "2020-01-07T13:47:03+00:00"
         },
         {
             "name": "illuminate/container",
@@ -556,16 +556,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v6.8.0",
+            "version": "v6.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "484727dc42f1c9dbffb2182f6fb0d01ca1aba556"
+                "reference": "f1326dfae72c646a8598138b446347954f5e991e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/484727dc42f1c9dbffb2182f6fb0d01ca1aba556",
-                "reference": "484727dc42f1c9dbffb2182f6fb0d01ca1aba556",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/f1326dfae72c646a8598138b446347954f5e991e",
+                "reference": "f1326dfae72c646a8598138b446347954f5e991e",
                 "shasum": ""
             },
             "require": {
@@ -576,7 +576,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.0-dev"
+                    "dev-master": "6.x-dev"
                 }
             },
             "autoload": {
@@ -596,7 +596,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2019-12-06T13:40:59+00:00"
+            "time": "2020-01-07T13:47:03+00:00"
         },
         {
             "name": "illuminate/support",
@@ -1054,16 +1054,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.1",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "f0aea3df20d15635b3cb9730ca5eea1c65b7f201"
+                "reference": "82437719dab1e6bdd28726af14cb345c2ec816d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/f0aea3df20d15635b3cb9730ca5eea1c65b7f201",
-                "reference": "f0aea3df20d15635b3cb9730ca5eea1c65b7f201",
+                "url": "https://api.github.com/repos/symfony/console/zipball/82437719dab1e6bdd28726af14cb345c2ec816d0",
+                "reference": "82437719dab1e6bdd28726af14cb345c2ec816d0",
                 "shasum": ""
             },
             "require": {
@@ -1126,7 +1126,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-01T10:06:17+00:00"
+            "time": "2019-12-17T10:32:23+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -2106,16 +2106,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.1",
+            "version": "v4.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "51c0135ef3f44c5803b33dc60e96bf4f77752726"
+                "reference": "b84501ad50adb72a94fb460a5b5c91f693e99c9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/51c0135ef3f44c5803b33dc60e96bf4f77752726",
-                "reference": "51c0135ef3f44c5803b33dc60e96bf4f77752726",
+                "url": "https://api.github.com/repos/symfony/process/zipball/b84501ad50adb72a94fb460a5b5c91f693e99c9b",
+                "reference": "b84501ad50adb72a94fb460a5b5c91f693e99c9b",
                 "shasum": ""
             },
             "require": {
@@ -2151,7 +2151,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-28T13:33:56+00:00"
+            "time": "2019-12-06T10:06:46+00:00"
         },
         {
             "name": "symfony/service-contracts",

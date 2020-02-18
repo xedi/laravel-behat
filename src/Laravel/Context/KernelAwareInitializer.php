@@ -1,7 +1,7 @@
 <?php
 namespace Xedi\Behat\Laravel\Context;
 
-use Xedi\Behat\Context\KernalAwareContext;
+use Xedi\Behat\Context\KernelAwareContext;
 use Xedi\Behat\Context\KernelAwareInitializer as BaseInitializer;
 use Xedi\Behat\Laravel\ServiceContainer\LaravelBooter;
 

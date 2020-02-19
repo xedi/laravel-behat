@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Artisan;
  * @package Xedi\Behat
  * @author  Chris Smith <chris@xedi.com>
  */
-trait Migratefresh
+trait MigrateFresh
 {
     /**
      * Migrate the database before each scenario.

@@ -9,9 +9,17 @@
 
     <!-- Show Progress -->
     <arg value="p" />
+    <arg name="basepath" value="."/>
 
     <rule ref="PSR12" />
     <rule ref="PSR2.Files.EndFileNewline"/>
+    <rule ref="vendor/suin/phpcs-psr4-sniff/src/Suin"/>
+    <rule ref="Suin.Classes.PSR4">
+        <properties>
+            <!-- composerJsonPath must be relative path to "basepath" -->
+            <property name="composerJsonPath" value="composer.json"/>
+        </properties>
+    </rule>
     <rule ref="Generic.Commenting" />
     <rule ref="PEAR.Commenting">
         <exclude name="PEAR.Commenting.FileComment.Missing" />

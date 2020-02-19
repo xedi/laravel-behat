@@ -6,7 +6,7 @@ use Symfony\Component\HttpKernel\Client;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
- * Kernal Driver
+ * Kernel Driver
  *
  * @package Xedi\Behat
  * @author  Chris Smith <chris@xedi.com>

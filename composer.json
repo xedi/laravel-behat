@@ -22,7 +22,8 @@
         "symfony/dependency-injection": "^4",
         "symfony/event-dispatcher": "^4",
         "symfony/http-foundation": "^4",
-        "symfony/http-kernel": "^4"
+        "symfony/http-kernel": "^4",
+        "suin/phpcs-psr4-sniff": "^2.2"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "3.4.*"

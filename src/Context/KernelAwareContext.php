@@ -5,7 +5,7 @@ use Behat\Behat\Context\Context;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
- * KernalAwareContext interface
+ * KernelAwareContext interface
  *
  * @package Xedi\Behat
  * @author  Chris Smith <chris@xedi.com>

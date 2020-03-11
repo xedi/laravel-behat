@@ -464,7 +464,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.18.0",
+            "version": "v6.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",

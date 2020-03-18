@@ -467,16 +467,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.18.1",
+            "version": "v6.18.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "f78d0bb182611303187346e59bf8ea4ff5de8396"
+                "reference": "7a4afd3802ead03fd9ea64f71b78cd774a491dd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/f78d0bb182611303187346e59bf8ea4ff5de8396",
-                "reference": "f78d0bb182611303187346e59bf8ea4ff5de8396",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/7a4afd3802ead03fd9ea64f71b78cd774a491dd0",
+                "reference": "7a4afd3802ead03fd9ea64f71b78cd774a491dd0",
                 "shasum": ""
             },
             "require": {
@@ -487,9 +487,12 @@
                 "symfony/process": "^4.3.4"
             },
             "suggest": {
-                "dragonmantank/cron-expression": "Required to use scheduling component (^2.0).",
+                "dragonmantank/cron-expression": "Required to use scheduler (^2.0).",
                 "guzzlehttp/guzzle": "Required to use the ping methods on schedules (^6.0|^7.0).",
-                "illuminate/filesystem": "Required to use the generator command (^6.0)"
+                "illuminate/bus": "Required to use the scheduled job dispatcher (^6.0)",
+                "illuminate/container": "Required to use the scheduler (^6.0)",
+                "illuminate/filesystem": "Required to use the generator command (^6.0)",
+                "illuminate/queue": "Required to use closures for scheduled jobs (^6.0)"
             },
             "type": "library",
             "extra": {
@@ -514,7 +517,7 @@
             ],
             "description": "The Illuminate Console package.",
             "homepage": "https://laravel.com",
-            "time": "2020-02-15T15:36:39+00:00"
+            "time": "2020-03-11T12:43:23+00:00"
         },
         {
             "name": "illuminate/container",

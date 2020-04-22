@@ -108,7 +108,7 @@ composer-install:
 	--volume $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/app \
 	--env-file .env \
 	--user $(id -u):$(id -g) \
-	xediltd/composer $(cmd-composer-install)
+	composer $(cmd-composer-install)
 	rm -f auth.json
 
 composer-update:
@@ -116,7 +116,7 @@ composer-update:
 	--volume $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/app \
 	--env-file .env \
 	--user $(id -u):$(id -g) \
-	xediltd/composer $(cmd-composer-update)
+	composer $(cmd-composer-update)
 	rm -f auth.json
 
 composer-install-dev:
@@ -124,7 +124,7 @@ composer-install-dev:
 	-v $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/app \
 	--env-file .env \
 	--user $(id -u):$(id -g) \
-	xediltd/composer $(cmd-composer-install-dev)
+	composer $(cmd-composer-install-dev)
 	rm -f auth.json
 
 composer-dump-auto:
@@ -132,7 +132,7 @@ composer-dump-auto:
 	--volume $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/app \
 	--env-file .env \
 	--user $(id -u):$(id -g) \
-	xediltd/composer dump-autoload
+	composer dump-autoload
 	rm -f auth.json
 
 composer-add-dep:
@@ -140,7 +140,7 @@ composer-add-dep:
 	--volume $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/app \
 	--env-file .env \
 	--user $(id -u):$(id -g) \
-	xediltd/composer /bin/bash -ci "composer require $(module) $(version) --ignore-platform-reqs --no-scripts"
+	composer /bin/bash -ci "composer require $(module) $(version) --ignore-platform-reqs --no-scripts"
 	rm -f auth.json
 
 composer-add-dev-dep:
@@ -148,7 +148,7 @@ composer-add-dev-dep:
 	--volume $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))):/app \
 	--env-file .env \
 	--user $(id -u):$(id -g) \
-	xediltd/composer /bin/bash -ci "composer require $(module) $(version) --dev --ignore-platform-reqs --no-scripts"
+	composer /bin/bash -ci "composer require $(module) $(version) --dev --ignore-platform-reqs --no-scripts"
 	rm -f auth.json
 
 # CICD

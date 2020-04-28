@@ -522,7 +522,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v6.18.10",
+            "version": "v6.18.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",

@@ -532,16 +532,16 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v6.18.11",
+            "version": "v6.18.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "4078808892a7a40cbbfa5dec57c2efa1f170097d"
+                "reference": "d794d9d8344e49b5ea1967072f3caddc510e8cac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/4078808892a7a40cbbfa5dec57c2efa1f170097d",
-                "reference": "4078808892a7a40cbbfa5dec57c2efa1f170097d",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/d794d9d8344e49b5ea1967072f3caddc510e8cac",
+                "reference": "d794d9d8344e49b5ea1967072f3caddc510e8cac",
                 "shasum": ""
             },
             "require": {
@@ -572,7 +572,7 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2020-02-27T19:49:00+00:00"
+            "time": "2020-05-13T14:05:27+00:00"
         },
         {
             "name": "illuminate/contracts",

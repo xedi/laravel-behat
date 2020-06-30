@@ -460,7 +460,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.18.22",
+            "version": "v6.18.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -558,7 +558,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v6.18.22",
+            "version": "v6.18.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",

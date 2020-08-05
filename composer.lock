@@ -460,7 +460,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v6.18.31",
+            "version": "v6.18.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -2624,7 +2624,7 @@
         },
         {
             "name": "symfony/polyfill-php73",
-            "version": "v1.18.0",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php73.git",
@@ -2700,7 +2700,7 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.18.0",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",

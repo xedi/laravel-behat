@@ -1377,16 +1377,16 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.11",
+            "version": "v4.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "47aa9064d75db36389692dd4d39895a0820f00f2"
+                "reference": "aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/47aa9064d75db36389692dd4d39895a0820f00f2",
-                "reference": "47aa9064d75db36389692dd4d39895a0820f00f2",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e",
+                "reference": "aeb73aca16a8f1fe958230fe44e6cf4c84cbb85e",
                 "shasum": ""
             },
             "require": {
@@ -1444,7 +1444,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-23T08:31:43+00:00"
+            "time": "2020-08-10T07:47:39+00:00"
         },
         {
             "name": "symfony/dependency-injection",
@@ -1610,16 +1610,16 @@
         },
         {
             "name": "symfony/error-handler",
-            "version": "v4.4.11",
+            "version": "v4.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/error-handler.git",
-                "reference": "66f151360550ec2b3273b3746febb12e6ba0348b"
+                "reference": "2434fb32851f252e4f27691eee0b77c16198db62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/error-handler/zipball/66f151360550ec2b3273b3746febb12e6ba0348b",
-                "reference": "66f151360550ec2b3273b3746febb12e6ba0348b",
+                "url": "https://api.github.com/repos/symfony/error-handler/zipball/2434fb32851f252e4f27691eee0b77c16198db62",
+                "reference": "2434fb32851f252e4f27691eee0b77c16198db62",
                 "shasum": ""
             },
             "require": {
@@ -1677,7 +1677,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-23T08:35:20+00:00"
+            "time": "2020-08-17T09:56:45+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1974,16 +1974,16 @@
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v4.4.11",
+            "version": "v4.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "a675d2bf04a9328f164910cae6e3918b295151f3"
+                "reference": "f93f6b3e52a590749994cc23d8fb879472ceb76c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/a675d2bf04a9328f164910cae6e3918b295151f3",
-                "reference": "a675d2bf04a9328f164910cae6e3918b295151f3",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/f93f6b3e52a590749994cc23d8fb879472ceb76c",
+                "reference": "f93f6b3e52a590749994cc23d8fb879472ceb76c",
                 "shasum": ""
             },
             "require": {
@@ -2075,7 +2075,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-24T04:10:09+00:00"
+            "time": "2020-08-31T06:09:42+00:00"
         },
         {
             "name": "symfony/mime",
@@ -2551,7 +2551,7 @@
         },
         {
             "name": "symfony/polyfill-php72",
-            "version": "v1.18.0",
+            "version": "v1.18.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php72.git",
@@ -3084,16 +3084,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.4.11",
+            "version": "v4.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "2125805a1a4e57f2340bc566c3013ca94d2722dc"
+                "reference": "1bef32329f3166486ab7cb88599cae4875632b99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/2125805a1a4e57f2340bc566c3013ca94d2722dc",
-                "reference": "2125805a1a4e57f2340bc566c3013ca94d2722dc",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/1bef32329f3166486ab7cb88599cae4875632b99",
+                "reference": "1bef32329f3166486ab7cb88599cae4875632b99",
                 "shasum": ""
             },
             "require": {
@@ -3171,7 +3171,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-06-24T13:34:53+00:00"
+            "time": "2020-08-17T07:31:35+00:00"
         },
         {
             "name": "symfony/yaml",

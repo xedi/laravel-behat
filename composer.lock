@@ -1905,7 +1905,7 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v4.4.12",
+            "version": "v4.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
@@ -2079,7 +2079,7 @@
         },
         {
             "name": "symfony/mime",
-            "version": "v4.4.12",
+            "version": "v4.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mime.git",

@@ -345,21 +345,21 @@
         },
         {
             "name": "friends-of-behat/mink-browserkit-driver",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfBehat/MinkBrowserKitDriver.git",
-                "reference": "0b440bd2d25f7ae9f7027815afff60ad228ed9e9"
+                "reference": "8110b99ed1ac2b50ad287280bfc20e08f58b6cc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfBehat/MinkBrowserKitDriver/zipball/0b440bd2d25f7ae9f7027815afff60ad228ed9e9",
-                "reference": "0b440bd2d25f7ae9f7027815afff60ad228ed9e9",
+                "url": "https://api.github.com/repos/FriendsOfBehat/MinkBrowserKitDriver/zipball/8110b99ed1ac2b50ad287280bfc20e08f58b6cc6",
+                "reference": "8110b99ed1ac2b50ad287280bfc20e08f58b6cc6",
                 "shasum": ""
             },
             "require": {
                 "behat/mink": "^1.7",
-                "php": "^7.2",
+                "php": "^7.2|^8.0",
                 "symfony/browser-kit": "^4.4|^5.0",
                 "symfony/dom-crawler": "^4.4|^5.0"
             },
@@ -400,7 +400,7 @@
                 "browser",
                 "testing"
             ],
-            "time": "2020-01-15T16:47:47+00:00"
+            "time": "2021-02-04T14:39:46+00:00"
         },
         {
             "name": "friends-of-behat/mink-extension",

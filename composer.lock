@@ -283,27 +283,27 @@
         },
         {
             "name": "friends-of-behat/mink",
-            "version": "v1.8.0",
+            "version": "v1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfBehat/Mink.git",
-                "reference": "28798f57e9674cb99750606807d623bbc0ae6db3"
+                "reference": "7745d8d29070fa92eb1271e2afbd6f51e916287b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfBehat/Mink/zipball/28798f57e9674cb99750606807d623bbc0ae6db3",
-                "reference": "28798f57e9674cb99750606807d623bbc0ae6db3",
+                "url": "https://api.github.com/repos/FriendsOfBehat/Mink/zipball/7745d8d29070fa92eb1271e2afbd6f51e916287b",
+                "reference": "7745d8d29070fa92eb1271e2afbd6f51e916287b",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2",
+                "php": "^7.2|^8.0",
                 "symfony/css-selector": "^3.4|^4.4|^5.0"
             },
             "replace": {
                 "behat/mink": "self.version"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^4.2"
+                "symfony/phpunit-bridge": "^5.2"
             },
             "suggest": {
                 "behat/mink-browserkit-driver": "extremely fast headless driver for Symfony\\Kernel-based apps (Sf2, Silex)",
@@ -341,25 +341,25 @@
                 "testing",
                 "web"
             ],
-            "time": "2020-01-14T18:25:17+00:00"
+            "time": "2021-02-04T13:51:38+00:00"
         },
         {
             "name": "friends-of-behat/mink-browserkit-driver",
-            "version": "v1.4.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfBehat/MinkBrowserKitDriver.git",
-                "reference": "0b440bd2d25f7ae9f7027815afff60ad228ed9e9"
+                "reference": "8110b99ed1ac2b50ad287280bfc20e08f58b6cc6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfBehat/MinkBrowserKitDriver/zipball/0b440bd2d25f7ae9f7027815afff60ad228ed9e9",
-                "reference": "0b440bd2d25f7ae9f7027815afff60ad228ed9e9",
+                "url": "https://api.github.com/repos/FriendsOfBehat/MinkBrowserKitDriver/zipball/8110b99ed1ac2b50ad287280bfc20e08f58b6cc6",
+                "reference": "8110b99ed1ac2b50ad287280bfc20e08f58b6cc6",
                 "shasum": ""
             },
             "require": {
                 "behat/mink": "^1.7",
-                "php": "^7.2",
+                "php": "^7.2|^8.0",
                 "symfony/browser-kit": "^4.4|^5.0",
                 "symfony/dom-crawler": "^4.4|^5.0"
             },
@@ -400,7 +400,7 @@
                 "browser",
                 "testing"
             ],
-            "time": "2020-01-15T16:47:47+00:00"
+            "time": "2021-02-04T14:39:46+00:00"
         },
         {
             "name": "friends-of-behat/mink-extension",
@@ -1037,16 +1037,16 @@
         },
         {
             "name": "suin/phpcs-psr4-sniff",
-            "version": "v2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/suin/phpcs-psr4-sniff.git",
-                "reference": "4849971d8693cffa4192c978e9cebdd7348d65aa"
+                "reference": "6cd3e6cdef038eaacf834670148a1d34099fa04a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/suin/phpcs-psr4-sniff/zipball/4849971d8693cffa4192c978e9cebdd7348d65aa",
-                "reference": "4849971d8693cffa4192c978e9cebdd7348d65aa",
+                "url": "https://api.github.com/repos/suin/phpcs-psr4-sniff/zipball/6cd3e6cdef038eaacf834670148a1d34099fa04a",
+                "reference": "6cd3e6cdef038eaacf834670148a1d34099fa04a",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1084,7 @@
                 "phpcs",
                 "static-analysis"
             ],
-            "time": "2020-12-02T02:12:18+00:00"
+            "time": "2021-02-26T15:19:54+00:00"
         },
         {
             "name": "symfony/browser-kit",
@@ -1325,27 +1325,22 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.1.6",
+            "version": "v5.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "e544e24472d4c97b2d11ade7caacd446727c6bf9"
+                "reference": "5d5f97809015102116208b976eb2edb44b689560"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/e544e24472d4c97b2d11ade7caacd446727c6bf9",
-                "reference": "e544e24472d4c97b2d11ade7caacd446727c6bf9",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/5d5f97809015102116208b976eb2edb44b689560",
+                "reference": "5d5f97809015102116208b976eb2edb44b689560",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\CssSelector\\": ""
@@ -1372,7 +1367,7 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony CssSelector Component",
+            "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "funding": [
                 {
@@ -1388,7 +1383,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-20T17:43:50+00:00"
+            "time": "2021-05-16T13:07:46+00:00"
         },
         {
             "name": "symfony/dependency-injection",

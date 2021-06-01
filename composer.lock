@@ -1037,16 +1037,16 @@
         },
         {
             "name": "suin/phpcs-psr4-sniff",
-            "version": "v2.2.1",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/suin/phpcs-psr4-sniff.git",
-                "reference": "4849971d8693cffa4192c978e9cebdd7348d65aa"
+                "reference": "6cd3e6cdef038eaacf834670148a1d34099fa04a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/suin/phpcs-psr4-sniff/zipball/4849971d8693cffa4192c978e9cebdd7348d65aa",
-                "reference": "4849971d8693cffa4192c978e9cebdd7348d65aa",
+                "url": "https://api.github.com/repos/suin/phpcs-psr4-sniff/zipball/6cd3e6cdef038eaacf834670148a1d34099fa04a",
+                "reference": "6cd3e6cdef038eaacf834670148a1d34099fa04a",
                 "shasum": ""
             },
             "require": {
@@ -1084,7 +1084,7 @@
                 "phpcs",
                 "static-analysis"
             ],
-            "time": "2020-12-02T02:12:18+00:00"
+            "time": "2021-02-26T15:19:54+00:00"
         },
         {
             "name": "symfony/browser-kit",
